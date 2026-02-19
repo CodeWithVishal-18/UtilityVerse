@@ -26,7 +26,7 @@ export default function Weather() {
         }
       } catch (err) {
         if (err.name !== "AbortError") {
-          setError("City not found. Please try again.")
+          setError("City not found. Please try again..")
           setWeather(null)
         }
       } finally {
