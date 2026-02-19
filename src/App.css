@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+.gradient-text {
+    background: linear-gradient(270deg, #6366f1, #ef4444, #3b82f6);
+    background-size: 600% 600%;
+    animation: gradientShift 6s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.powerful-divider {
+    width: 290px;
+    height: 3px;
+    background: linear-gradient(90deg, #c70cc4, transparent);
+    border-radius: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.quiz-divider {
+    width: 330px;
+    height: 3px;
+    background: linear-gradient(90deg, #c70cc4, transparent);
+    border-radius: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.job-divider {
+    width: 290px;
+    height: 3px;
+    background: linear-gradient(90deg, #c70cc4, transparent);
+    border-radius: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-divider {
+    width: 430px;
+    height: 3px;
+    background: linear-gradient(90deg, #c70cc4, transparent);
+    border-radius: 50px;
+}
+
+.techQuiz-divider {
+    width: 210px;
+    height: 3px;
+    background: linear-gradient(90deg, #c70cc4, transparent);
+    border-radius: 50px;
+}
+
+.frontend-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #d94c9c, transparent);
+    border-radius: 50px;
+}
+
+.quiz-card {
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--bs-body-bg);
+}
+
+.quiz-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #9d174d, #9f1239, #7f1d1d);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.quiz-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-card:hover::before {
+    opacity: 1;
+}
+
+.quiz-card:hover h6,
+.quiz-card:hover i {
+    color: #FEF3C7 !important;
+}
+
+.feature-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    background-color: var(--bs-body-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at left, #35013f, #561050, #951556);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.feature-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 0 16px #35013f, 0 0 16px #561050, 0 0 16px #951556 !important;
+}
+
+.feature-card:hover::before {
+    opacity: 0.85;
+}
+
+.feature-card:hover h5,
+.feature-card:hover p,
+.feature-card:hover i {
+    color: #FEF3C7 !important;
+}
+
+[data-theme="dark"] .feature-card:hover {
+    box-shadow: 0 0 16px #35013f, 0 0 16px #561050, 0 0 16px #951556 !important;
+}
+
+.nav-hover {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: radial-gradient(ellipse at center, #6e5773, #d45079, #ea9085);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 4rem;
+}
+
+.nav-hover:hover::after {
+    width: 100%;
 }
