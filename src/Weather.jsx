@@ -21,9 +21,10 @@ export default function Weather() {
         let data = await res.json()
         if (!data.data) throw new Error("City not found")
         setWeather(data.data[0])
-        if (!recent.includes(city)) {
-          setRecent((prev) => [city, ...prev.slice(0, 4)])
-        }
+        setRecent((prev) => {
+          if (prev.includes(city)) return prev
+          return [city, ...prev.slice(0, 4)]
+        })
       } catch (err) {
         if (err.name !== "AbortError") {
           setError("City not found. Please try again..")

@@ -22,7 +22,7 @@ export default function TextFormatter() {
         navigator.clipboard.writeText(text)
     }
     let toSentenceCase = () => {
-        let formatted = text.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, (c) => c.toUpperCase())
+        let formatted = text.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase())
         setText(formatted)
     }
 
