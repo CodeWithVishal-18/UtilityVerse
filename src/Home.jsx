@@ -44,7 +44,7 @@ export default function Home() {
             </div>
 
             <div className="col-12 col-sm-6 col-lg-3 mb-4 px-3">
-              <Link to="/calculator" className="text-decoration-none"><FeatureCard icon={<i className="bi bi-fonts me-2 text-primary"></i>} title="Text Formattier" text="Write smarter. Format faster" /></Link>
+              <Link to="/textformatter" className="text-decoration-none"><FeatureCard icon={<i className="bi bi-fonts me-2 text-primary"></i>} title="Text Formattier" text="Write smarter. Format faster" /></Link>
             </div>
 
             <div className="col-12 col-sm-6 col-lg-3 mb-4 px-3">
@@ -52,7 +52,7 @@ export default function Home() {
             </div>
 
             <div className="col-12 col-sm-6 col-lg-3 mb-4 px-3">
-              <Link to="/weather" className="text-decoration-none"><FeatureCard icon={<i className="bi bi-briefcase text-info-emphasis fs-1"></i>} title="Job Application Dashboard" text="Track your job applications with smart status management." /></Link>
+              <Link to="/jobdashboard" className="text-decoration-none"><FeatureCard icon={<i className="bi bi-briefcase text-info-emphasis fs-1"></i>} title="Job Application Dashboard" text="Track your job applications with smart status management." /></Link>
             </div>
           </div>
         </div>

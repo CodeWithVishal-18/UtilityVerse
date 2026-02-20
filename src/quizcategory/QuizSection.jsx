@@ -81,7 +81,8 @@ export default function QuizSection() {
         return () => clearInterval(timerRef.current)
     }, [currentIndex, showResult, handleNext])
 
-    let handleAnswer = (selectedOption) => {
+    let handleAnswer = (selectedOption,e) => {
+        e.target.blur()
         let correctAnswer = currentQuestion.options[currentQuestion.answer]
         if (selectedOption === correctAnswer) {
             setScore((prev) => prev + 1)
@@ -141,7 +142,7 @@ export default function QuizSection() {
                     </div>
                     <h5 className="fw-semibold mb-4">{currentQuestion.question}</h5>
                     {currentQuestion.options.map((opt, i) => (
-                        <button key={i} className={`${buttonTheme} w-100 mb-3 text-start`} onClick={() => handleAnswer(opt)}> {opt}</button>
+                        <button key={`${currentQuestion.question}-${i}`} className={`${buttonTheme} w-100 mb-3 text-start`} onClick={(e) => handleAnswer(opt,e)}> {opt}</button>
                     ))}
                 </div>
             ) : (
