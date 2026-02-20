@@ -27,7 +27,7 @@ export default function Home() {
             <p className="text-muted small mb-3">UtilityVerse brings together productivity, learning, and career tracking in one clean, responsive dashboard.</p>
             <div className="d-flex justify-content-center gap-4 small text-muted mt-3">
               <span><i className="bi bi-graph-up-arrow me-2 text-success"></i> Smart Status Tracking </span>
-              <span><i className="bi bi-arrow-repeat me-2 text-info"></i> Real-time Updates </span>
+              <span><i className="bi bi-arrow-repeat me-2 text-info rotate-icon"></i> Real-time Updates </span>
               <span><i className="bi bi-speedometer2 me-2 text-primary"></i> Minimal & Fast</span>
             </div>
           </div>

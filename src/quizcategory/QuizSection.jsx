@@ -117,7 +117,7 @@ export default function QuizSection() {
     if (percentage >= 80) {
         performanceMessage = "Excellent 🎉"
         performanceClass = "text-success"
-    } else if (percentage >= 50) {
+    } else if (percentage >= 60) {
         performanceMessage = "Good 👍"
         performanceClass = "text-warning"
     } else {
