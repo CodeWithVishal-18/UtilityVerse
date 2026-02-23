@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { ThemeContext } from './context/ThemeContext'
 
 export default function Navbar() {
@@ -20,19 +20,22 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-3 mt-3 mt-lg-0">
             <li className="nav-item">
-              <Link className="nav-link nav-hover" to="/todo" onClick={closeNavbar}>ToDo</Link>
+              <NavLink to="/todo" className={({ isActive }) => "nav-link nav-hover " + (isActive ? "active-link" : "")} onClick={closeNavbar}>ToDo</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-hover" to="/textformatter" onClick={closeNavbar}>Text Formatter</Link>
+              <NavLink className={({ isActive }) => "nav-link nav-hover " + (isActive ? "active-link" : "")} to="/textformatter" onClick={closeNavbar}>Text Formatter</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-hover" to="/quiz" onClick={closeNavbar}>Quiz</Link>
+              <NavLink className={({ isActive }) => "nav-link nav-hover " + (isActive ? "active-link" : "")} to="/quiz" onClick={closeNavbar}>Quiz</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-hover" to="/weather" onClick={closeNavbar}>Weather</Link>
+              <NavLink className={({ isActive }) => "nav-link nav-hover " + (isActive ? "active-link" : "")} to="/ekagr" onClick={closeNavbar}>Ekagr</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-hover" to="/jobdashboard" onClick={closeNavbar}>JobApplied</Link>
+              <NavLink className={({ isActive }) => "nav-link nav-hover " + (isActive ? "active-link" : "")} to="/jobdashboard" onClick={closeNavbar}>JobApplied</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({ isActive }) => "nav-link nav-hover " + (isActive ? "active-link" : "")} to="/mystats" onClick={closeNavbar}>MyStats</NavLink>
             </li>
             <li className="nav-item" onClick={closeNavbar}>
               <span style={{ cursor: "pointer" }} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>

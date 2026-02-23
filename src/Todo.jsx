@@ -9,11 +9,10 @@ export default function Todo() {
   useEffect(() => { localStorage.setItem("todos", JSON.stringify(todos)); }, [todos])
 
   let addTodo = () => {
-    if (!input.trim()) return
-
-    let newTodo = { id: Date.now(), text: input, completed: false, category, }
-    setTodos([newTodo, ...todos])
-    setInput("")
+    if (!input.trim()) return;
+    let newTodo = { id: crypto.randomUUID(),  text: input, completed: false, category, date: new Date().toISOString(),}
+    setTodos((prev) => [newTodo, ...prev]);
+    setInput("");
   }
 
   let toggleTodo = (id) => {

@@ -10,9 +10,11 @@
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -161,11 +163,42 @@
 }
 
 .rotate-icon:hover {
-  display: inline-block;
-  animation: spin 1s linear infinite;
+    display: inline-block;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.active-link {
+    position: relative;
+}
+
+.active-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: radial-gradient(ellipse at center, #6e5773, #d45079, #ea9085);
+    border-radius: 4rem;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
 }

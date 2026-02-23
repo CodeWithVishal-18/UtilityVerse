@@ -10,21 +10,23 @@ import App from './App';
 import Home from './Home';
 import Todo from './Todo';
 import Quiz from './Quiz';
-import Weather from './Weather';
 import ThemeProvider from './context/ThemeContext';
 import TextFormatter from './TextFormatter.jsx';
 import QuizSection from './quizcategory/QuizSection.jsx';
 import JobApplied from './JobApplied.jsx';
+import MyStats from './MyStats.jsx';
+import Ekagr from './Ekagr.jsx';
 
 let myroutes=createBrowserRouter([
   {path:"/",element:<App/>,children:[
     {index:true,element:<Home/>},
     {path:"/todo",element:<Todo/>},
     {path:"/quiz",element:<Quiz/>},
+    {path:"/ekagr",element:<Ekagr/>},
     {path:"/quiz/:tech",element:<QuizSection/>},
     {path:"/textformatter",element:<TextFormatter/>},
-    {path:"/weather",element:<Weather/>},
     {path:"/jobdashboard",element:<JobApplied/>},
+    {path:"/mystats",element:<MyStats/>},
     {path:"*",element:<Navigate to="/" replace/>}
   ]}
 ])

@@ -30,7 +30,11 @@ export default function JobApplied() {
     }
 
     let deleteJob = (id) => {
-        setJobs(jobs.filter(job => job.id !== id))
+        let confirmDelete=window.confirm("Are You Sure You want to Delete this Application?")
+        
+        if(confirmDelete){
+            setJobs(jobs.filter(job => job.id !== id))
+        }
     }
 
     let total = jobs.length
