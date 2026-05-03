@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React, { memo, useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { ThemeContext } from './context/ThemeContext'
 
-export default function Navbar() {
+let Navbar = memo(() => {
   let { theme, setTheme } = useContext(ThemeContext)
   const closeNavbar = () => {
     const navbar = document.getElementById("navbarNav");
@@ -51,4 +51,6 @@ export default function Navbar() {
       </div>
     </nav>
   )
-}
+})
+
+export default Navbar;
