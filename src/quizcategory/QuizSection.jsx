@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useContext, useCallback } from "react";
+import { useEffect, useState, useRef, useContext, useCallback, memo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
 
@@ -11,7 +11,7 @@ let quizAPIs = {
     java: "https://dummyjson.com/c/57a5-7881-496c-979e",
     springboot: ""
 }
-export default function QuizSection() {
+let QuizSection = memo(() => {
     let { tech } = useParams()
     let { theme } = useContext(ThemeContext)
 
@@ -171,4 +171,6 @@ export default function QuizSection() {
             )}
         </div>
     )
-}
+})
+
+export default QuizSection;
