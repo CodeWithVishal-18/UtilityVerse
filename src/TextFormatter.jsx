@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 
-export default function TextFormatter() {
+let TextFormatter = memo(() => {
     let [text, setText] = useState("")
 
     let toUpper = () => setText(text.toUpperCase())
@@ -44,7 +44,7 @@ export default function TextFormatter() {
                             <button className="btn btn-secondary btn-sm" onClick={toLower}>lowercase</button>
                             <button className="btn btn-warning btn-sm" onClick={capitalize}>Capitalize</button>
                             <button className="btn btn-info btn-sm" onClick={removeExtraSpaces}>Remove Spaces</button>
-                            <button className="btn btn-sm" style={{backgroundColor:"purple",color:"white"}} onClick={toSentenceCase}>Sentence Case</button>
+                            <button className="btn btn-sm" style={{ backgroundColor: "purple", color: "white" }} onClick={toSentenceCase}>Sentence Case</button>
                             <button className="btn btn-success btn-sm" onClick={copyText}>Copy</button>
                             <button className="btn btn-danger btn-sm" onClick={clearText}>Clear</button>
                         </div>
@@ -69,4 +69,6 @@ export default function TextFormatter() {
             </div>
         </div>
     )
-}
+})
+
+export default TextFormatter;
