@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from "react"
 import {
     BarChart,
     Bar,
@@ -8,7 +8,7 @@ import {
     ResponsiveContainer
 } from "recharts"
 
-export default function MyStats() {
+let MyStats = memo(() => {
 
     let todos = JSON.parse(localStorage.getItem("todos")) || []
     let jobs = JSON.parse(localStorage.getItem("jobs")) || []
@@ -101,4 +101,6 @@ export default function MyStats() {
             </div>
         </div>
     )
-}
+})
+
+export default MyStats;
