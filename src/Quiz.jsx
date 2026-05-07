@@ -65,3 +65,5 @@ let Quiz = memo(() => {
     </div>
   )
 })
+
+export default Quiz;

@@ -86,3 +86,5 @@ let Todo = memo(() => {
     </div>
   )
 })
+
+export default Todo;
