@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
-export default function Quiz() {
+let Quiz = memo(() => {
   let frontendTech = [
     { name: "html", isActive: true },
     { name: "css", isActive: true },
@@ -64,4 +64,4 @@ export default function Quiz() {
       </div>
     </div>
   )
-}
+})
