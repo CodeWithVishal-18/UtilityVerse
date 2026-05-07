@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 
-export default function Todo() {
+let Todo = memo(() => {
   let [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todos")) || [])
   let [input, setInput] = useState("")
   let [category, setCategory] = useState("Work")
@@ -10,7 +10,7 @@ export default function Todo() {
 
   let addTodo = () => {
     if (!input.trim()) return;
-    let newTodo = { id: crypto.randomUUID(),  text: input, completed: false, category, date: new Date().toISOString(),}
+    let newTodo = { id: crypto.randomUUID(), text: input, completed: false, category, date: new Date().toISOString(), }
     setTodos((prev) => [newTodo, ...prev]);
     setInput("");
   }
@@ -85,4 +85,4 @@ export default function Todo() {
       </div>
     </div>
   )
-}
+})
