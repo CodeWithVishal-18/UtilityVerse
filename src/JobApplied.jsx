@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { memo, useContext, useEffect, useState } from 'react'
 import { ThemeContext } from './context/ThemeContext';
 
-export default function JobApplied() {
+let JobApplied = memo(() => {
     let { theme } = useContext(ThemeContext)
     let [jobs, setJobs] = useState([])
     let [filter, setFilter] = useState("All")
@@ -30,9 +30,9 @@ export default function JobApplied() {
     }
 
     let deleteJob = (id) => {
-        let confirmDelete=window.confirm("Are You Sure You want to Delete this Application?")
-        
-        if(confirmDelete){
+        let confirmDelete = window.confirm("Are You Sure You want to Delete this Application?")
+
+        if (confirmDelete) {
             setJobs(jobs.filter(job => job.id !== id))
         }
     }
@@ -142,4 +142,6 @@ export default function JobApplied() {
             )}
         </div>
     )
-}
+})
+
+export default JobApplied;
