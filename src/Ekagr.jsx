@@ -1,7 +1,7 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
+import React, { memo, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { ThemeContext } from './context/ThemeContext'
 
-export default function Ekagr() {
+let Ekagr = memo(() => {
     let { theme } = useContext(ThemeContext)
     let savedSettings = JSON.parse(localStorage.getItem("ekagrSettings")) || { workMinutes: 25, breakMinutes: 5, }
     let [workMinutes, setWorkMinutes] = useState(savedSettings.workMinutes)
@@ -148,4 +148,6 @@ export default function Ekagr() {
             </div>
         </div>
     )
-}
+})
+
+export default Ekagr;
