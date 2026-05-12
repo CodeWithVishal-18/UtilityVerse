@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import FeatureCard from './context/FeatureCard'
 
-export default function Home() {
+let Home = memo(() => {
 
   return (
     <>
@@ -14,7 +14,7 @@ export default function Home() {
           <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
 
             <Link to="/todo" className="btn btn-primary btn-lg px-4">🚀 Get Started</Link>
-            <a href="#features" className="btn btn-outline-secondary btn-lg px-4"><i className="bi bi-nut" style={{color:"brown"}}></i> Explore Tools</a>
+            <a href="#features" className="btn btn-outline-secondary btn-lg px-4"><i className="bi bi-nut" style={{ color: "brown" }}></i> Explore Tools</a>
 
           </div>
         </div>
@@ -59,4 +59,6 @@ export default function Home() {
       </section>
     </ >
   )
-}
+})
+
+export default Home;
