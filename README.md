@@ -13,9 +13,6 @@ Utility-Verse is a modern multi-utility web application that brings together pro
 
 The platform is designed to reduce distractions by providing multiple useful tools in a single place with a fast, smooth, and interactive user experience.
 
-🌐 **Live Demo:**  
-[Utility-Verse Live Website](https://utility-versee.vercel.app/?utm_source=chatgpt.com)
-
 ---
 
 # ✨ Features
